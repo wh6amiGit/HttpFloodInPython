@@ -15,11 +15,11 @@ num_req = 0
 if len(sys.argv) == 2:
 	host = sys.argv[1].replace("http://", "").replace("https://", "").replace("www.", "")
 	port = 80
-	num_req = 100000000000000000000000
+	num_req = 2**100
 elif len(sys.argv) == 3:
 	host = sys.argv[1].replace("http://", "").replace("https://", "").replace("www.", "")
 	port = sys.argv[2]
-	num_req = 100000000000000000000000
+	num_req = 2**100
 elif len(sys.argv) == 4:
 	host = sys.argv[1].replace("http://", "").replace("https://", "").replace("www.", "")
 	port = sys.argv[2]
@@ -27,7 +27,7 @@ elif len(sys.argv) == 4:
 else:
 	print(f"Usage: {sys.argv[0]} < Host > < Port > < Number of requests > ")
 	print("Default port: 80")
-	print("Default number of requests: 100000000000000000000000")
+	print("Default number of requests: 1267650600228229401496703205376(2**100)")
 	sys.exit(1)
 
 ip = socket.gethostbyname(host)
